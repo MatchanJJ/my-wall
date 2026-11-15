@@ -32,7 +32,7 @@ export function Wall() {
     setLoading(true);
     setFeedError("");
     try {
-      const { data, error } = await client.from("posts").select("id, author_name, body, created_at")
+      const { data, error } = await client.from("posts").select("id, author_name, body, created_at, image_path")
         .order("created_at", { ascending: false }).order("id", { ascending: false }).limit(size + 1);
       if (error) throw error;
       if (!mounted.current || request !== latestRequest.current) return;
@@ -82,7 +82,7 @@ export function Wall() {
     setAnnouncement("");
     try {
       const { data, error } = await client.from("posts").insert({ body: body.trim() })
-        .select("id, author_name, body, created_at").single();
+        .select("id, author_name, body, created_at, image_path").single();
       if (error) throw error;
       if (!mounted.current) return;
       setPosts(current => mergePosts(current, [data]));

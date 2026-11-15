@@ -12,7 +12,7 @@ test("messages reject whitespace and over-limit text, including non-BMP characte
   assert.ok(messageError("😀".repeat(281)));
 });
 
-const post = (id, created_at, body = id) => ({ id, created_at, body, author_name: "Wall Visitor" });
+const post = (id, created_at, body = id) => ({ id, created_at, body, author_name: "Wall Visitor", image_path: null });
 
 test("snapshot and Realtime races keep new posts and deduplicate insert responses", () => {
   const older = post("a", "2026-11-15T00:00:00Z");

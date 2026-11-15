@@ -4,9 +4,9 @@ export type Database = {
   public: {
     Tables: {
       posts: {
-        Row: { id: string; author_name: string; body: string; created_at: string };
-        Insert: { body: string; id?: string; author_name?: string; created_at?: string };
-        Update: { body?: string; id?: string; author_name?: string; created_at?: string };
+        Row: { id: string; author_name: string; body: string; created_at: string; image_path: string | null };
+        Insert: { body: string; id?: string; author_name?: string; created_at?: string; image_path?: string | null };
+        Update: { body?: string; id?: string; author_name?: string; created_at?: string; image_path?: string | null };
         Relationships: [];
       };
     };
