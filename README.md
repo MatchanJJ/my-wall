@@ -7,7 +7,7 @@ Write a message, press **Share**, and see it appear on everyone's wall. Posts li
 **Live app:** https://my-wall-navy.vercel.app  
 **Repository:** https://github.com/MatchanJJ/my-wall
 
-![My Wall with photo uploads on Vercel](artifacts/screenshots/my-wall-photos-live.jpg)
+![Mark's Wall with Mark's portrait on Vercel](artifacts/screenshots/marks-wall-live.jpg)
 
 ## Run locally
 

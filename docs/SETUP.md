@@ -9,6 +9,7 @@
 - Posting, refresh persistence, and two-tab Realtime delivery passed on the public production URL.
 - Production screenshots: `artifacts/screenshots/my-wall-live-desktop.jpg` and `artifacts/screenshots/my-wall-live-narrow.jpg`.
 - Photo uploads are deployed and verified; the current photo screenshot is `artifacts/screenshots/my-wall-photos-live.jpg`.
+- The site is personalized as **Mark's Wall**, using Mark's supplied portrait. The current branding screenshot is `artifacts/screenshots/marks-wall-live.jpg`.
 
 Publishing is complete. The setup steps below explain local use and how to reproduce the deployment; do not recreate the existing resources.
 

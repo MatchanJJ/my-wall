@@ -56,6 +56,8 @@ Published to https://my-wall-navy.vercel.app from the public https://github.com/
 
 ## Remaining checks
 
+Mark's Wall personalization was verified on the production site on November 15, 2026. The supplied portrait loaded in the 188px square profile frame; the masthead, profile name, footer, accessible home link, and browser title use Mark's Wall. The seven existing tests, typecheck, and production builds passed. The live browser reported no warnings or errors. Screenshot: `artifacts/screenshots/marks-wall-live.jpg`. Phone-width rendering was not rechecked for this branding change.
+
 Photo upload was verified locally and on the public production site on November 15, 2026:
 
 - A JPEG selected through the native chooser displayed a preview and could be removed before sharing.
