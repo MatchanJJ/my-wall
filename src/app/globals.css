@@ -38,8 +38,7 @@ textarea::placeholder { color: #58677e; opacity: 1; }
 .wordmark span { color: #c5d4f2; }
 .masthead p { color: #f0f4fc; font-size: 12px; margin: 8px 0 0; }
 .page-frame { width: min(100%, 980px); min-height: calc(100vh - 78px); margin: auto; padding: 32px 30px 24px; display: grid; grid-template-columns: 188px minmax(0, 1fr); gap: 30px; background: white; border-inline: 1px solid #dce2ec; }
-.profile-picture { width: 188px; height: 176px; display: flex; justify-content: center; align-items: center; background: #edf2fa; color: #3b5998; font-size: 68px; font-weight: 700; letter-spacing: -3px; border: 1px solid #d4dfef; }
-.profile-picture span { color: #798eb3; }
+.profile-picture { display: block; width: 188px; height: 188px; object-fit: cover; background: #edf2fa; border: 1px solid #d4dfef; }
 .profile h2 { margin: 14px 0 3px; font-size: 17px; font-weight: 700; }
 .profile-copy p { color: #58677e; font-size: 12px; line-height: 1.7; margin: 0; }
 .wall-link { display: block; background: #edf2fa; border-block: 1px solid #d4dfef; padding: 7px 10px; margin-top: 24px; font-weight: 700; text-decoration: none; font-size: 12px; }
@@ -125,7 +124,7 @@ h1 { font-size: 26px; line-height: 1.2; font-weight: 700; margin: 0 0 5px; lette
   .masthead p { font-size: 11px; }
   .page-frame { display: block; padding: 22px 20px; min-height: calc(100vh - 65px); }
   .profile { display: flex; align-items: center; gap: 12px; padding-bottom: 22px; }
-  .profile-picture { flex: 0 0 62px; width: 62px; height: 62px; font-size: 30px; letter-spacing: -1px; }
+  .profile-picture { flex: 0 0 62px; width: 62px; height: 62px; }
   .profile h2 { margin: 0 0 3px; font-size: 16px; }
   .profile-copy p { font-size: 11px; }
   .desktop-break, .wall-link, .about-wall { display: none; }

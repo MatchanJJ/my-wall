@@ -1,4 +1,4 @@
-# My Wall
+# Mark's Wall
 
 - Stack: React 19, Next.js App Router, TypeScript, Tailwind CSS, shadcn/ui, Supabase.
 - Keep the 2008 Facebook-style wall and the anonymous posting flow.

@@ -1,4 +1,4 @@
-# My Wall
+# Mark's Wall
 
 A 2008-style public wall built for [Test 2: My Wall React App](https://tremendous-tiger-a4a.notion.site/Test-2-My-Wall-React-App-22300bbdfc3b804491bbf6d7f2481cd8).
 

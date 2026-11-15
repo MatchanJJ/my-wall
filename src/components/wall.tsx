@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { useCallback, useEffect, useRef, useState, type ChangeEvent, type FormEvent } from "react";
 import { Textarea } from "@/components/ui/textarea";
 import { characterCount, MAX_MESSAGE_LENGTH, mergePosts, messageError, type Post } from "@/lib/posts";
@@ -148,16 +149,17 @@ export function Wall() {
       <a className="skip-link" href="#wall">Skip to the wall</a>
       <header className="masthead">
         <div className="masthead-inner">
-          <a className="wordmark" href="/" aria-label="My Wall home">my wall<span aria-hidden="true">.</span></a>
+          <a className="wordmark" href="/" aria-label="Mark's Wall home">mark&apos;s wall<span aria-hidden="true">.</span></a>
           <p>A little more connected.</p>
         </div>
       </header>
 
       <main className="page-frame" id="wall">
         <aside className="profile" aria-label="About this wall">
-          <div className="profile-picture" aria-hidden="true">mw<span>.</span></div>
+          <Image className="profile-picture" src="/mark-portrait.png" alt="Mark"
+            width={188} height={188} sizes="(max-width: 680px) 62px, 188px" loading="eager" />
           <div className="profile-copy">
-            <h2>My Wall</h2>
+            <h2>Mark&apos;s Wall</h2>
             <p>A place for your thoughts<br className="desktop-break" /> and everyone else's.</p>
           </div>
           <a className="wall-link" href="#messages" aria-current="page">The Wall</a>
@@ -246,7 +248,7 @@ export function Wall() {
             {hasMore ? <button className="older-button" disabled={loading} onClick={() => { pageSize.current += 50; void loadPosts(); }}>Load older messages</button> : null}
             {client && connection === "Live updates paused" ? <p className="live-paused">New messages may be delayed. <button className="text-button" disabled={loading} onClick={() => void loadPosts()}>Refresh the wall</button></p> : null}
           </section>
-          <footer className="wall-footer"><span>My Wall</span><p>A small corner of the internet, shared.</p></footer>
+          <footer className="wall-footer"><span>Mark&apos;s Wall</span><p>A small corner of the internet, shared.</p></footer>
         </div>
       </main>
     </>

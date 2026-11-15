@@ -1,6 +1,8 @@
-# My Wall design
+# Mark's Wall design
 
 The task brief pins a 2008 Facebook-style wall: compact, readable, blue and white, with a square profile image beside a chronological feed. Use Arial for that era's familiar interface. Avoid decorative imagery, rounded dashboard cards, fake navigation, and invented social features.
+
+Use the name Mark's Wall in the masthead, profile, footer, and browser title. Show Mark's supplied portrait in the square profile frame; visitors continue posting as Wall Visitor.
 
 - Palette: masthead #3b5998, link blue #314f8b, pale blue #edf2fa, ink #263348, muted text #58677e, white page.
 - Layout: centered 980px frame; 188px profile rail and flexible wall. On narrow screens, the profile becomes a compact horizontal row.

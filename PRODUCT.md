@@ -1,7 +1,9 @@
-# My Wall
+# Mark's Wall
 
 ## Purpose
 Test 2 of the Junior React / Next.js Developer Application: a public, anonymous message wall. Visitors share short messages and see one another's updates immediately.
+
+The public site is named **Mark's Wall**, with Mark's supplied portrait as the profile picture. The repository, Vercel project, and Supabase project retain their `my-wall` identifiers.
 
 ## Platform and stack
 Responsive web. React 19, Next.js App Router, TypeScript, Supabase, Tailwind CSS, shadcn/ui. Deployment target: Vercel.

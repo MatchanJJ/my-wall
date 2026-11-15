@@ -136,6 +136,6 @@ At https://apply.capm.us, choose **2) Wall**. Provide:
 
 Suggested reviewer note:
 
-> My Wall uses Next.js, React, Tailwind CSS, shadcn/ui, and Supabase. Anonymous visitors can share messages up to 280 characters. Posts persist after refresh and appear live in other tabs. Public database access permits reading and constrained insertion only.
+> Mark's Wall uses Next.js, React, Tailwind CSS, shadcn/ui, and Supabase. Anonymous visitors can share messages up to 280 characters. Posts persist after refresh and appear live in other tabs. Public database access permits reading and constrained insertion only.
 
 This project does not submit the job application or application form automatically.
