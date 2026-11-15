@@ -8,6 +8,7 @@
 - Framework: Next.js. Runtime: Node.js 24.x. Public Supabase variables are configured for Production, Preview, and Development.
 - Posting, refresh persistence, and two-tab Realtime delivery passed on the public production URL.
 - Production screenshots: `artifacts/screenshots/my-wall-live-desktop.jpg` and `artifacts/screenshots/my-wall-live-narrow.jpg`.
+- Photo uploads are deployed and verified; the current photo screenshot is `artifacts/screenshots/my-wall-photos-live.jpg`.
 
 Publishing is complete. The setup steps below explain local use and how to reproduce the deployment; do not recreate the existing resources.
 
@@ -130,7 +131,7 @@ At https://apply.capm.us, choose **2) Wall**. Provide:
 
 - The public Vercel **production** URL.
 - The public GitHub repository URL.
-- A screenshot of the live wall with a posted message. The `my-wall-live-desktop.jpg` and `my-wall-live-narrow.jpg` files in `artifacts/screenshots/` were captured from the production site and include a persisted post.
+- A screenshot of the live wall with a posted message. `artifacts/screenshots/my-wall-photos-live.jpg` shows the deployed photo feature; the earlier `my-wall-live-desktop.jpg` and `my-wall-live-narrow.jpg` capture the original wall.
 - Optional demo video and reviewer notes.
 
 Suggested reviewer note:

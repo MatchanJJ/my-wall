@@ -56,6 +56,19 @@ Published to https://my-wall-navy.vercel.app from the public https://github.com/
 
 ## Remaining checks
 
+Photo upload was verified locally and on the public production site on November 15, 2026:
+
+- A JPEG selected through the native chooser displayed a preview and could be removed before sharing.
+- Unsupported file types and a corrupt JPEG showed useful errors without uploading.
+- A photo and message saved successfully, appeared live in a second tab, and remained after refresh.
+- Uploaded images loaded at their public Storage URLs and fit within the feed.
+- `npm run test:photos` passed direct Storage checks for rejected oversized files, disallowed MIME types, invalid filenames, denied overwriting/deletion, and rejected arbitrary post image paths. The check uses the post captioned “A little snapshot of My Wall — photo uploads are here!” with the original `my-wall-desktop.jpg` fixture, and verifies its bytes before probing permissions.
+- Supabase's security advisor reported no findings after the Storage changes.
+- The final local production build and Vercel production build passed. The public photo flow produced no browser warnings or errors.
+- The updated production screenshot is `artifacts/screenshots/my-wall-photos-live.jpg`.
+
+JPEG was exercised end to end; PNG/WebP format selection and size boundaries are covered by the unit tests and bucket configuration. An actual 5 MB boundary upload and a post-save failure after a successful upload were not simulated in the browser. Successful uploads are reused on a failed-post retry; abandoned uploads remain for administrator cleanup.
+
 - The browser viewport override did not apply the requested 390px width. A 671px responsive layout was verified, but a phone-width layout still needs a check on a real 390px browser or phone before submission.
 - A failed network request, the reconnect flow, and the actual Load older button with more than 50 database rows were not exercised in the browser. The implementation preserves drafts on failed writes, merges reconnect snapshots, and increases the fetch window for older posts.
 
