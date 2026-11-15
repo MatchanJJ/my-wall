@@ -13,9 +13,16 @@ export function messageError(value: string) {
   return null;
 }
 
+function fractionalSeconds(timestamp: string) {
+  // Date.parse drops Postgres' microseconds, which still determine feed order.
+  return (timestamp.match(/\.(\d+)/)?.[1] ?? "").padEnd(6, "0");
+}
+
 export function mergePosts(current: Post[], incoming: Post[]) {
   const unique = new Map([...current, ...incoming].map(post => [post.id, post]));
   return [...unique.values()].sort((a, b) =>
-    Date.parse(b.created_at) - Date.parse(a.created_at) || b.id.localeCompare(a.id),
+    Date.parse(b.created_at) - Date.parse(a.created_at)
+    || fractionalSeconds(b.created_at).localeCompare(fractionalSeconds(a.created_at))
+    || b.id.localeCompare(a.id),
   );
 }

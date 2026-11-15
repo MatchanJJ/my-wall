@@ -29,6 +29,15 @@ test("timestamp ties have stable ID order, and timezone offsets sort by actual t
   assert.deepEqual(mergePosts([a], [latest, b]), [latest, b, a]);
 });
 
+test("Postgres microseconds keep genuinely newer posts first within one millisecond", () => {
+  const older = post("z", "2026-11-15T00:00:00.100001+00:00");
+  const newer = post("a", "2026-11-15T00:00:00.100002+00:00");
+  assert.deepEqual(mergePosts([older], [newer]), [newer, older]);
+  const equal = post("b", "2026-11-15T00:00:00.1Z");
+  const zeroPadded = post("c", "2026-11-15T00:00:00.100000Z");
+  assert.deepEqual(mergePosts([equal], [zeroPadded]), [zeroPadded, equal]);
+});
+
 test("loading another page preserves every older post", () => {
   const existing = Array.from({ length: 50 }, (_, i) => post(String(i), new Date(i * 1000).toISOString()));
   const incoming = [post("new", "2026-11-15T00:00:00Z"), ...existing];
