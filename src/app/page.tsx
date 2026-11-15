@@ -1,3 +1,5 @@
+import { Wall } from "@/components/wall";
+
 export default function Home() {
-  return <main><h1>My Wall</h1><p>A little more connected.</p></main>;
+  return <Wall />;
 }
