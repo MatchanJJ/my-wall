@@ -4,7 +4,10 @@ A 2008-style public wall built for [Test 2: My Wall React App](https://tremendou
 
 Write a message, press **Share**, and see it appear on everyone's wall. Posts live in Supabase and remain after refresh. No account is needed.
 
-![My Wall with a persisted message](artifacts/screenshots/my-wall-desktop.jpg)
+**Live app:** https://my-wall-navy.vercel.app  
+**Repository:** https://github.com/MatchanJJ/my-wall
+
+![My Wall with a persisted message on Vercel](artifacts/screenshots/my-wall-live-desktop.jpg)
 
 ## Run locally
 

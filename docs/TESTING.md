@@ -40,11 +40,23 @@ A separate SQL transaction verified that 280 emoji are accepted and 281 are reje
 - The browser console contained no warnings or errors.
 - The Impeccable mechanical detector returned no findings for the wall component and stylesheet.
 
+## Production verification
+
+Published to https://my-wall-navy.vercel.app from the public https://github.com/MatchanJJ/my-wall repository on November 15, 2026.
+
+- Vercel's Git-triggered production build passed using Next.js 16.4.6 and Node.js 24.
+- A request without Vercel authentication returned HTTP 200 and the wall page.
+- The app connected to Supabase and showed its existing persisted message.
+- Sharing a new message succeeded, with one copy appearing in a second tab through Realtime.
+- The new message remained after refreshing the production page.
+- Browser console: no warnings or errors.
+- The live 1280px desktop and 671px narrow layouts were inspected with no horizontal overflow. Production screenshots were saved in `artifacts/screenshots/`.
+- The Vercel upload check excluded `.env.local`, `.git`, `.next`, `.vercel`, `node_modules`, and TypeScript build caches.
+
 ## Remaining checks
 
-- The browser viewport override did not change the reported 1280px viewport, so the mobile layout has not been visually verified. Check it in a real 390px browser or phone before submission.
+- The browser viewport override did not apply the requested 390px width. A 671px responsive layout was verified, but a phone-width layout still needs a check on a real 390px browser or phone before submission.
 - A failed network request, the reconnect flow, and the actual Load older button with more than 50 database rows were not exercised in the browser. The implementation preserves drafts on failed writes, merges reconnect snapshots, and increases the fetch window for older posts.
-- Repeat the browser acceptance checks on the Vercel production deployment before submitting.
 
 ## Rerun the database check
 

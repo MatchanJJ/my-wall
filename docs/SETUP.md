@@ -1,5 +1,16 @@
 # Setup and deployment
 
+## Published project
+
+- Production app: https://my-wall-navy.vercel.app
+- Public repository: https://github.com/MatchanJJ/my-wall
+- Vercel project: `my-wall` in `matchans-projects`, connected to this repository with production branch `main`.
+- Framework: Next.js. Runtime: Node.js 24.x. Public Supabase variables are configured for Production, Preview, and Development.
+- Posting, refresh persistence, and two-tab Realtime delivery passed on the public production URL.
+- Production screenshots: `artifacts/screenshots/my-wall-live-desktop.jpg` and `artifacts/screenshots/my-wall-live-narrow.jpg`.
+
+Publishing is complete. The setup steps below explain local use and how to reproduce the deployment; do not recreate the existing resources.
+
 ## 1. Open the project
 
 In Codex, open this folder:
@@ -76,6 +87,8 @@ Public environment variables are included at build time. Rebuild after changing 
 
 ## 4. Publish to GitHub
 
+The repository above is already public, with `main` as its default branch and `feature/my-wall` preserving the work history. Use the following only when publishing a separate repository.
+
 Keep the small conventional commits already created. Do not commit `.env.local`, `.next`, or `node_modules`.
 
 Create a public GitHub repository for this project, then add its actual URL as `origin`. Publish `main` as the production branch and preserve `feature/my-wall` for the work history. If `main` does not exist yet in this new repository, create it at the completed feature head:
@@ -92,6 +105,8 @@ Skip `git branch main` or `git remote add origin` when they already exist; inspe
 Future work belongs on purpose-named branches, for example `feature/photo-upload` or `fix/post-order`. Commit examples: `feat(wall): add photo uploads`, `fix(wall): preserve draft after a failed share`. Do not add coauthor trailers.
 
 ## 5. Deploy on Vercel
+
+The production deployment above is already connected to GitHub. Pushes to `main` trigger production builds. The checked-in `vercel.json` selects Next.js, and `.vercelignore` excludes local environment files and build caches.
 
 1. Sign into Vercel and choose **Add New → Project**.
 2. Import the public repository. Select **Next.js**, repository root, and production branch `main`.
@@ -111,7 +126,7 @@ At https://apply.capm.us, choose **2) Wall**. Provide:
 
 - The public Vercel **production** URL.
 - The public GitHub repository URL.
-- A screenshot of the live wall with a posted message. A local reference screenshot is in `artifacts/screenshots/`; capture the deployed page for the actual submission.
+- A screenshot of the live wall with a posted message. The `my-wall-live-desktop.jpg` and `my-wall-live-narrow.jpg` files in `artifacts/screenshots/` were captured from the production site and include a persisted post.
 - Optional demo video and reviewer notes.
 
 Suggested reviewer note:
