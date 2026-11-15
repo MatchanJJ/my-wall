@@ -23,6 +23,7 @@ Open http://127.0.0.1:3000. For another checkout, copy `.env.example` to `.env.l
 ## Features
 
 - Anonymous messages up to 280 Unicode code points, including emoji.
+- One optional JPEG, PNG, or WebP photo per message, up to 5 MB, with preview and removal before sharing.
 - Newest-first feed, with 50 posts initially and a button to load older messages.
 - Supabase Realtime inserts, deduplication, and refresh after reconnection.
 - Accessible labels, keyboard focus, posting status, loading/empty/error states, and retained drafts on failure.
@@ -38,9 +39,12 @@ npm test
 npm run typecheck
 npm run build
 npm run test:database
+npm run test:photos
 ```
 
 The database smoke check creates one visible diagnostic post and prints its ID. It intentionally uses public credentials that cannot delete posts. An administrator can remove that exact diagnostic row afterward. See [verification results and manual checks](docs/TESTING.md).
+
+The photo storage check uses the screenshot test post created during browser verification. It checks public retrieval, rejected size/type/name violations, and denied overwrite/delete operations. It verifies the fixture bytes before attempting those checks.
 
 Build and dev scripts use Next.js's supported `--webpack` option because Turbopack's CSS worker crashed on this Windows machine. The production build passed with webpack.
 
@@ -51,6 +55,8 @@ Build and dev scripts use Next.js's supported `--webpack` option because Turbopa
 
 ## Scope
 
-Messages are public, with the fixed author **Wall Visitor**. Authentication, uploads, likes, and comments are outside this challenge. Anonymous insertion has no application rate limit or moderation; add abuse controls before promoting the wall broadly.
+Messages and photos are public, with the fixed author **Wall Visitor**. A message is required even when attaching a photo. Authentication, likes, and comments are outside this challenge. Anonymous insertion has no application rate limit or moderation; add abuse controls before promoting the wall broadly.
+
+Photos use random filenames and cannot be overwritten or deleted by visitors. Failed post saves retain the draft and reuse a successful upload on retry. Abandoned uploads can remain in Storage and need administrator cleanup; use scheduled cleanup if usage grows. Original photo files and metadata are retained.
 
 Commits follow the [requested cheatsheet](https://gist.github.com/qoomon/5dfcdf8eec66a051ecd85625518cfd13), without coauthor trailers. Work lives on `feature/my-wall`, following [Conventional Branch](https://conventionalbranch.org/).

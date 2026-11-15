@@ -12,7 +12,8 @@
     "start": "next start --hostname 127.0.0.1",
     "typecheck": "tsc --noEmit",
     "test": "node --test tests/*.test.mjs",
-    "test:database": "node --env-file=.env.local tests/database-smoke.mjs"
+    "test:database": "node --env-file=.env.local tests/database-smoke.mjs",
+    "test:photos": "node --env-file=.env.local tests/photo-storage-smoke.mjs"
   },
   "dependencies": {
     "@supabase/supabase-js": "2.119.0",

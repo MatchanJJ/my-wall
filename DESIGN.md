@@ -7,3 +7,4 @@ The task brief pins a 2008 Facebook-style wall: compact, readable, blue and whit
 - Controls: visible labels, rectangular buttons, clear keyboard focus. Live status always includes text. Publishing is announced, and failed publishing retains the draft.
 - States: connecting/live/offline, loading, retry, empty feed, posting, success, validation error.
 - Motion: a brief highlight on the newly shared message; respect reduced motion.
+- Photos: a native file chooser below the message, supported formats/size beside it, a removable preview, and contained feed images that preserve their aspect ratio. Require a message with each photo.

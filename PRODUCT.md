@@ -12,12 +12,13 @@ Responsive web. React 19, Next.js App Router, TypeScript, Supabase, Tailwind CSS
 - Subscribe to new posts with Supabase Realtime.
 - No account needed; use the fixed author Wall Visitor.
 - Start with 50 messages and let visitors load older messages.
+- Attach one optional JPEG, PNG, or WebP photo up to 5 MB to a message. Preview or remove it before sharing; persist it in Supabase Storage and display it in live feed updates.
 
 ## Visual direction
 The supplied brief pins both the visual world (2008 Facebook-style Wall) and the surface (input, Share button, chronological feed). Preserve that direction: blue masthead, compact Arial typography, square avatars, pale blue borders and a profile/sidebar beside the wall. This is a functional web app, not a marketing page.
 
 ## Boundaries
-No authentication, uploads, likes, comments, editing, deletion, or private messages. All messages are public. Anonymous posting is appropriate for this challenge; moderation and abuse controls would be needed for wider public use.
+No authentication, likes, comments, editing, deletion, or private messages. All messages and photos are public. Anonymous posting is appropriate for this challenge; moderation and abuse controls would be needed for wider public use.
 
 ## Sources
 - https://tremendous-tiger-a4a.notion.site/Test-2-My-Wall-React-App-22300bbdfc3b804491bbf6d7f2481cd8

@@ -27,7 +27,7 @@ npm ci
 
 ## 2. Connect Supabase
 
-This checkout is already connected to the **my-wall** project in **MatchanJJ's Org**, in Singapore. The `posts` table, RLS policies, index, and Realtime publication have already been applied. Do not rerun the schema on that existing project.
+This checkout is already connected to the **my-wall** project in **MatchanJJ's Org**, in Singapore. The `posts` table, RLS policies, index, Realtime publication, and `wall-photos` Storage bucket have already been applied. Do not rerun the SQL files on that existing project.
 
 Open its [Supabase dashboard](https://supabase.com/dashboard/project/nlqhgdvwwnuueiyobxdf).
 
@@ -35,7 +35,7 @@ For a completely new project instead:
 
 1. Create the project in Supabase.
 2. Open **SQL Editor**.
-3. Paste the complete contents of `supabase/schema.sql` and run it once. The transaction creates the table, grants, constraints, RLS policies, index, and Realtime publication. It does not drop or overwrite existing tables; if `posts` already exists, inspect it before proceeding.
+3. Run `supabase/schema.sql` once, then run `supabase/photo_upload.sql` once. The first transaction creates the table, grants, constraints, RLS policies, index, and Realtime publication. The second adds the nullable photo reference and a public photo bucket with a 5 MB size limit, JPEG/PNG/WebP MIME restrictions, and insert-only visitor access. Neither script drops or overwrites existing tables; inspect any pre-existing `posts` table or `wall-photos` bucket before proceeding.
 4. In the project's Connect dialog or API settings, copy its project URL and **publishable key**.
 5. Copy `.env.example` to `.env.local` and replace both placeholders:
 
@@ -52,7 +52,7 @@ Only these public browser values are needed. The app also accepts `NEXT_PUBLIC_S
 git check-ignore .env.local
 ```
 
-The database assigns every post's UUID, fixed author, and timestamp. Visitors can provide only `body`. All posts are publicly readable. There are no visitor update or delete privileges.
+The database assigns every post's UUID, fixed author, and timestamp. Visitors can provide `body` and an optional constrained `image_path`. All posts and attached photos are public. There are no visitor update or delete privileges, including in Storage.
 
 ## 3. Run and check the wall
 
@@ -68,6 +68,8 @@ Open http://127.0.0.1:3000.
 4. Refresh. The message should still be there.
 5. Open the same page in a second tab. Share in the first tab and watch the second update without refreshing.
 6. Try an empty message and more than 280 characters. **Share** should stay disabled.
+7. Choose a JPEG, PNG, or WebP photo up to 5 MB. Check its preview, remove it, and choose it again. Add a message and Share. Confirm the photo loads in the second tab and remains after refresh.
+8. Try a non-image or corrupt image. The composer should show an error. Storage enforces size and MIME restrictions even when the browser is bypassed.
 
 Stop the server with Ctrl+C, then run:
 
@@ -76,6 +78,8 @@ npm test
 npm run typecheck
 npm run build
 ```
+
+After the screenshot test photo post exists, `npm run test:photos` verifies public retrieval and Storage restrictions using that exact fixture. See `docs/TESTING.md` for its setup.
 
 For a local production preview:
 

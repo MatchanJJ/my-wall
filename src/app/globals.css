@@ -60,6 +60,20 @@ h1 { font-size: 26px; line-height: 1.2; font-weight: 700; margin: 0 0 5px; lette
 .composer label { display: block; font-size: 14px; font-weight: 700; margin-bottom: 10px; }
 .composer textarea { min-height: 112px; border-radius: 0; line-height: 1.6; padding: 10px; }
 .composer textarea[aria-invalid="true"] { border-color: #a62c32; }
+.photo-upload { margin-top: 14px; }
+.photo-upload label { font-size: 12px; margin-bottom: 5px; }
+.photo-upload label span { font-weight: 400; color: #58677e; }
+.photo-upload input { display: block; max-width: 100%; font-size: 12px; color: #58677e; }
+.photo-upload input:focus-visible { outline: 3px solid #456fc2; outline-offset: 3px; }
+.photo-upload input::file-selector-button { background: #edf2fa; border: 1px solid #b9c8df; padding: 6px 10px; margin-right: 9px; color: #314f8b; cursor: pointer; font: inherit; }
+.photo-upload input::file-selector-button:hover { background: #e0e8f6; }
+.photo-upload input:disabled::file-selector-button { cursor: not-allowed; opacity: .6; }
+.photo-upload p { font-size: 11px; color: #58677e; margin: 6px 0 0; }
+.photo-preview { margin: 12px 0 16px; }
+.photo-preview img { display: block; max-width: 100%; max-height: 200px; object-fit: contain; object-position: left; }
+.photo-preview > div { display: flex; justify-content: space-between; gap: 12px; margin-top: 6px; font-size: 12px; }
+.photo-preview span { overflow-wrap: anywhere; min-width: 0; color: #58677e; }
+.photo-preview button { flex-shrink: 0; }
 .composer-actions { display: flex; justify-content: space-between; align-items: center; gap: 10px; margin-top: 10px; }
 .posting-as { font-size: 11px; color: #58677e; }
 .posting-as strong { color: #314f8b; font-weight: 700; }
@@ -86,6 +100,7 @@ h1 { font-size: 26px; line-height: 1.2; font-weight: 700; margin: 0 0 5px; lette
 .post article { min-width: 0; flex: 1; }
 .post h3 { margin: 0 0 4px; font-size: 13px; color: #314f8b; font-weight: 700; }
 .post-body { margin: 0 0 9px; font-size: 14px; line-height: 1.65; white-space: pre-wrap; overflow-wrap: anywhere; }
+.post-photo { display: block; max-width: 100%; max-height: 420px; width: auto; height: auto; margin: 8px 0 12px; object-fit: contain; object-position: left; }
 .post time { color: #58677e; font-size: 11px; }
 .just-shared { animation: shared 1.5s ease-out; }
 @keyframes shared { from { background: #f9f2d2; } to { background: transparent; } }

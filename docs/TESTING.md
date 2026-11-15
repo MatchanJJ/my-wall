@@ -4,13 +4,14 @@ Checked on November 15, 2026, using Node.js 24 and the live `my-wall` Supabase p
 
 ## Automated checks
 
-`npm test` passes five focused tests covering:
+`npm test` passes seven focused tests covering:
 
 - Blank/whitespace-only messages and 280/281-character boundaries, including emoji.
 - Duplicate INSERT events and fetch/Realtime races.
 - Stable timestamp ties and timezone offsets.
 - PostgreSQL microsecond ordering within the same millisecond.
 - Preserving older messages when the feed grows beyond 50.
+- Photo size boundaries (including exactly 5 MB), supported JPEG/PNG/WebP MIME types, and rejection of empty files and unsupported types.
 
 `npm run typecheck` and `npm run build` pass. The build uses webpack because Turbopack's CSS worker failed on this Windows host.
 
