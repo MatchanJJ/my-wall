@@ -1,0 +1,10 @@
+.git/
+.next/
+.vercel/
+node_modules/
+.env*
+!.env.example
+*.tsbuildinfo
+.impeccable/
+.supabase/
+supabase/.temp/
